@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 
 //Implemento elpath de acceso o llave
 @WebServlet("/ingresar")
@@ -25,6 +26,13 @@ public class Formulario extends HttpServlet {
         //Declaramos e inicializamos una variable donde vamos a
         //guardar el email
         String email = req.getParameter("email");
+        //Implemetar una variable para guardar  los lenguajes de progrmación
+        String[] lenguajes = req.getParameterValues("lenguajes");
+        String idioma = req.getParameter("idioma");
+        String pais = req.getParameter("pais");
+        String[] roles=req.getParameterValues("roles");
+        boolean habilitar=req.getParameter("habilitar") != null && req.getParameter("habilitar").equals("on");
+
 
         PrintWriter out = resp.getWriter();
         //Creo la plantilla html
@@ -40,6 +48,11 @@ public class Formulario extends HttpServlet {
         out.println("<li>Nombre usuario : "+ username+"</li>");
         out.println("<li>Password : " +password+"</li>");
         out.println("<li>Email : " + email + "</li>");
+        out.println("<ul>Lenguajes :");
+        Arrays.asList(lenguajes).forEach(lenguaje ->{
+            out.println("<li>"+lenguaje + "<li>");
+        });
+        out.print("</u>");
         out.println("</ul>");
         out.println("</body>");
         out.println("</html>");

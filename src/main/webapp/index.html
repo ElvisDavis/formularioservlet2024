@@ -11,7 +11,7 @@
     <form action="/formularioservlet/ingresar" method="post">
         <div>
             <label for="username">Ingrese el usuario</label>
-            <input type="text" name="username" id="username" placeholder="usuario">
+            <input type="text" name="username" id="username" placeholder="usuario" required>
         </div>
         <div>
             <label for="password">Ingrese la contraseña</label>
@@ -20,6 +20,74 @@
         <div>
             <label for="email">Ingrese el email</label>
             <input type="email" name="email" id="email" placeholder="Email">
+        </div>
+        <!--Lenguajes de progrmación select -->
+        <div>
+            <label for="lenguajes">Lenguajes de programación</label>
+            <div>
+                <select name="lenguajes" id="lenguajes" multiple>
+                    <option value="Java" selected>Java SE</option>
+                    <option value="jakartaaee" selected>Jakarta EE</option>
+                    <option value="php" selected>PHP</option>
+                    <option value="laravel">LARAVEL</option>
+                    <option value="springboot">SPRING BOOT</option>
+                </select>
+
+            </div>
+
+        </div>
+        <!--Select para idioma -->
+        <div>
+            <label>Seleciones el idioma</label>
+            <div>
+                <input type="radio" name="idioma" value="es">
+                <label>Español</label>
+            </div>
+            <div>
+                <input type="radio" name="idioma" value="en">
+                <label>Ingles</label>
+            </div>
+            <div>
+                <input type="radio" name="idioma" value="ru">
+                <label>Ruso</label>
+            </div>
+        </div>
+        <!--Implementamos select de nacionalidad-->
+        <div>
+            <label >Macionalidad</label>
+            <div>
+                <select name="pais" id="pais">
+                    <option value="">---Seleccione un pais--</option>
+                    <option value="EC">ECUADOR</option>
+                    <option value="PE">PERU</option>
+                    <option value="CO">COLOMBIA</option>
+                    <option value="CH">CHILE</option>
+                    <option value="AR">ARGENTINA</option>
+                </select>
+            </div>
+        </div>
+        <!--Checkbox par alos roles -->
+        <div>
+            <label>Roles</label>
+            <div>
+                <input type="checkbox" name="roles" value="ROLE_ADMIN"></input>
+                <label>Administrador</label>
+            </div>
+            <div>
+                <input type="checkbox"name="roles" value="ROLE_USER">
+                <label>Usuario</label>
+            </div>
+            <div>
+                <input type="checkbox" name="roles" value="ROLE_DIGI">
+                <label>Digitador</label>
+            </div>
+        </div>
+        <!--checkbox para habilitar al usuario -->
+        <div>
+            <label for="habilitar">Habilitar</label>
+            <div>
+                <input type="checkbox" name="habilitar" id="habilitar" checked>
+            </div>
         </div>
         <div>
             <input type="submit" value="Enviar">
